@@ -1,4 +1,4 @@
-package org.example.conenum;
+package org.example.sinenum;
 
 public abstract class Coche implements Comparable<Coche>{
     private String identificador;

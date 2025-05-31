@@ -1,32 +1,31 @@
-package org.example.conenum;
+package org.example.sinenum;
 
 import java.util.HashMap;
 
-import static org.example.conenum.CocheCombustion.COLOR.*;
-
-public class CocheCombustion extends Coche{
-    enum COLOR {BLANCO,AZUL,NEGRO,GRIS}
+public class CocheCombustion extends Coche {
     static final double PRECIO_BASE = 20_000.0;
-    COLOR tipoVisita;
-    static  HashMap<COLOR,Double> LISTA_COSTES_EXTRA;
+    String color;
 
-    public CocheCombustion(String descripcion, COLOR tipoVisita) {
+    public CocheCombustion(String descripcion, String color) {
         super(descripcion, PRECIO_BASE);
-        this.tipoVisita =  tipoVisita;
-        if (LISTA_COSTES_EXTRA == null) {
-            LISTA_COSTES_EXTRA = new HashMap<>();
-            LISTA_COSTES_EXTRA.put(BLANCO, 0.0);
-            LISTA_COSTES_EXTRA.put(AZUL, 1_500.0);
-            LISTA_COSTES_EXTRA.put(NEGRO, 2_000.0);
-            LISTA_COSTES_EXTRA.put(GRIS, 1_000.0);
-        }
+        this.color = color;
+
     }
 
 
 
     @Override
     public double costeExtra() {
-        return LISTA_COSTES_EXTRA.get(tipoVisita);
+        return switch (color.toUpperCase()){
+            case "BLANCO" -> 0.0;
+            case "NEGRO" -> 2_000.0;
+            case "AZUL" -> 1_5000.0;
+            case "GRUIS" -> 1_000.0;
+            // Cramos una excepcion y la lanzamos.
+            default -> throw new RuntimeException("Error. Color no contemplado");
+
+        };
+
     }
 
 }

@@ -1,4 +1,4 @@
-package org.example;
+package org.example.conenum;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -9,7 +9,7 @@ public class Main {
         List<Coche> listaActividades = new ArrayList<>();
         listaActividades.add(new CocheCombustion("CO345", CocheCombustion.COLOR.NEGRO));
         listaActividades.add(new CocheCombustion("CO234", CocheCombustion.COLOR.AZUL));
-        listaActividades.add(new CocheElectrico("EL123",25_000.0,0.16));
+        listaActividades.add(new CocheElectrico("EL123",15_000.0,0.16));
         listaActividades.add(new CocheElectrico("EL456",30_000.0,1.18));
 
         System.out.println("Coches ordenados por precio total:");
@@ -17,7 +17,7 @@ public class Main {
         Collections.sort(listaActividades);
        imprimeLista(listaActividades);
 
-        System.out.println("Actividades ordenadas por descripcion:");
+        System.out.println("Coches ordenadas por descripción:");
         listaActividades.sort(new ComparadorDescripcion());
         imprimeLista(listaActividades);
 

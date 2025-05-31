@@ -1,4 +1,4 @@
-package org.example;
+package org.example.conenum;
 
 public class CocheElectrico extends Coche {
     double coeficienteAutonomia;
