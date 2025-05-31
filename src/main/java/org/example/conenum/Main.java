@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import static org.example.conenum.CocheCombustion.COLOR.*;
+
 public class Main {
     public static void main(String[] args) {
         List<Coche> listaActividades = new ArrayList<>();
-        listaActividades.add(new CocheCombustion("CO345", CocheCombustion.COLOR.NEGRO));
-        listaActividades.add(new CocheCombustion("CO234", CocheCombustion.COLOR.AZUL));
+        listaActividades.add(new CocheCombustion("CO345", NEGRO));
+        listaActividades.add(new CocheCombustion("CO234", AZUL));
         listaActividades.add(new CocheElectrico("EL123",15_000.0,0.16));
         listaActividades.add(new CocheElectrico("EL456",30_000.0,1.18));
 
@@ -17,7 +19,7 @@ public class Main {
         Collections.sort(listaActividades);
        imprimeLista(listaActividades);
 
-        System.out.println("Coches ordenadas por descripción:");
+        System.out.println("\nnCoches ordenadas por descripción:");
         listaActividades.sort(new ComparadorDescripcion());
         imprimeLista(listaActividades);
 

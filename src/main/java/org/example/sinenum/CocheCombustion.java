@@ -20,7 +20,7 @@ public class CocheCombustion extends Coche {
             case "BLANCO" -> 0.0;
             case "NEGRO" -> 2_000.0;
             case "AZUL" -> 1_5000.0;
-            case "GRUIS" -> 1_000.0;
+            case "GRIS" -> 1_000.0;
             // Cramos una excepcion y la lanzamos.
             default -> throw new RuntimeException("Error. Color no contemplado");
 

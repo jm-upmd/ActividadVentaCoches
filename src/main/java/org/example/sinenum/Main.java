@@ -17,7 +17,7 @@ public class Main {
         Collections.sort(listaActividades);
        imprimeLista(listaActividades);
 
-        System.out.println("Actividades ordenadas por descripcion:");
+        System.out.println("Coches ordenadas por descripcion:");
         listaActividades.sort(new ComparadorDescripcion());
         imprimeLista(listaActividades);
 

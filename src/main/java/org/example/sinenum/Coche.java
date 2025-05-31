@@ -21,6 +21,7 @@ public abstract class Coche implements Comparable<Coche>{
     public abstract double costeExtra();
 
     public double precioTotal (){
+
         return precioBase + costeExtra();
     }
 
